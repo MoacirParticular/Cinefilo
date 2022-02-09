@@ -47,7 +47,7 @@ struct TrendingModel: Decodable {
 // MARK: - Result
 struct ResultModel: Decodable {
     let genreIDS: [Int]
-    let originalLanguage: OriginalLanguageModel
+    let originalLanguage: OriginalLanguage
     let originalTitle: String?
     let posterPath: String
     let video: Bool?
@@ -91,7 +91,7 @@ enum MediaTypeModel: String, Codable {
     case tv = "tv"
 }
 
-enum OriginalLanguageModel: String, Codable {
+enum OriginalLanguage: String, Codable {
     case en = "en"
     case es = "es"
     case ja = "ja"

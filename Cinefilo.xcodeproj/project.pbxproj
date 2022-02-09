@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		992A007327B3DD5B00B73D14 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A007227B3DD5B00B73D14 /* String+.swift */; };
+		992A007527B3DF3500B73D14 /* Formatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A007427B3DF3500B73D14 /* Formatter+.swift */; };
+		992A007727B3DF9600B73D14 /* Numeric+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A007627B3DF9600B73D14 /* Numeric+.swift */; };
 		99652B5027B31002003FCC3D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99652B4F27B31002003FCC3D /* AppDelegate.swift */; };
 		99652B5227B31002003FCC3D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99652B5127B31002003FCC3D /* SceneDelegate.swift */; };
 		99652B5427B31002003FCC3D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99652B5327B31002003FCC3D /* ViewController.swift */; };
@@ -48,6 +51,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		992A007227B3DD5B00B73D14 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		992A007427B3DF3500B73D14 /* Formatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+.swift"; sourceTree = "<group>"; };
+		992A007627B3DF9600B73D14 /* Numeric+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+.swift"; sourceTree = "<group>"; };
 		99652B4C27B31002003FCC3D /* Cinefilo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cinefilo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99652B4F27B31002003FCC3D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99652B5127B31002003FCC3D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,9 +223,9 @@
 			children = (
 				99652BA627B31281003FCC3D /* Constants */,
 				99652BA927B31281003FCC3D /* Enums */,
-				99652BAB27B31281003FCC3D /* ApiProvider.swift */,
 				99652BAC27B31281003FCC3D /* Utils */,
 				99652BAE27B31281003FCC3D /* Extensions */,
+				99652BAB27B31281003FCC3D /* ApiProvider.swift */,
 				99652BB027B31281003FCC3D /* ApiProvider+.swift */,
 				99652BB127B31281003FCC3D /* MyResponse.swift */,
 			);
@@ -255,6 +261,9 @@
 			isa = PBXGroup;
 			children = (
 				99652BAF27B31281003FCC3D /* Data+.swift */,
+				992A007227B3DD5B00B73D14 /* String+.swift */,
+				992A007427B3DF3500B73D14 /* Formatter+.swift */,
+				992A007627B3DF9600B73D14 /* Numeric+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,12 +422,15 @@
 				99652B5027B31002003FCC3D /* AppDelegate.swift in Sources */,
 				99652BB927B31281003FCC3D /* MyResponse.swift in Sources */,
 				99652BA227B31262003FCC3D /* BaseManager.swift in Sources */,
+				992A007727B3DF9600B73D14 /* Numeric+.swift in Sources */,
 				99652BBF27B31294003FCC3D /* TrendingViewModel.swift in Sources */,
 				99652B5227B31002003FCC3D /* SceneDelegate.swift in Sources */,
 				99652BB527B31281003FCC3D /* ApiProvider.swift in Sources */,
+				992A007327B3DD5B00B73D14 /* String+.swift in Sources */,
 				99652BB427B31281003FCC3D /* Enums.swift in Sources */,
 				99652BB827B31281003FCC3D /* ApiProvider+.swift in Sources */,
 				99652BB727B31281003FCC3D /* Data+.swift in Sources */,
+				992A007527B3DF3500B73D14 /* Formatter+.swift in Sources */,
 				99652BBE27B31294003FCC3D /* TrendingModel.swift in Sources */,
 				99652BB227B31281003FCC3D /* Constants.swift in Sources */,
 			);
