@@ -32,11 +32,10 @@ class TrendingManager: BaseManager, TrendingManagerProtocol {
                                      expecting: TrendingModel.self) { result in
             
             switch result {
-            case .success(let apiResponse) :
-                DebugLogger.log(apiResponse)
-//                let trendingViewModel = TrendingViewModel(model: apiResponse)
+            case .success(let model) :
+                let viewModel = TrendingViewModel(model: model)
                 
-                sucessHandler(TrendingViewModel())
+                sucessHandler(viewModel)
             case .failure(let error):
                 DebugLogger.log(error)
                 

@@ -69,6 +69,10 @@ public class ApiProvider {
 
         switch response.statusCode {
         case 200...299:
+            if let data = response.data {
+                return (response.statusCode, data)
+            }
+            
             if response.data != nil && JSONSerialization.isValidJSONObject(response.data as Any), let jsonData = try? JSONSerialization.data(withJSONObject: response.data as Any, options: []) {
                 return (response.statusCode, jsonData)
             } else {
