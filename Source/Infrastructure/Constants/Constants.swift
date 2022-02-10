@@ -15,8 +15,11 @@ enum TipoAmbiente {
 }
 
 struct Constants {
+    static let bundleAppealCopy: Bundle = .current
+    
     static let tipoAmbiente: TipoAmbiente = TipoAmbiente.producao
-    static let apiKey = "f5ee5a15ac98565adcee8a270babceab"
+    static let apiKey = "api_key=f5ee5a15ac98565adcee8a270babceab"
+    static let apiLanguage = "language=pt-BR"
 
     struct ApiError {
         static let badRequest = 400

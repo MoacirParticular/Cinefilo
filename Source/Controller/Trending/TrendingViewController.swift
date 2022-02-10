@@ -7,12 +7,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TrendingViewController: UIViewController {
 
+    // MARK: Views
+    
+    let trendingView: TrendingView = {
+        let view = TrendingView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        
+        return view
+    }()
+    
+    // MARK: - Life Cycle
+    
+    override func loadView() {
+        self.view = trendingView
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
+    }
+
+    // MARK: Actions
+    private func loadTrendings() {
         let manager: TrendingManagerProtocol = TrendingManager()
         
         manager.requestTrendings(mediaType: MediaType.all,
@@ -22,7 +40,6 @@ class ViewController: UIViewController {
             DebugLogger.log("Erro")
         }
     }
-
-
+    
 }
 

@@ -24,7 +24,7 @@ public class ApiProvider {
     public func request(parameters: [AnyHashable: Any], finalUrl: String, completion: @escaping CompletionCallBack) {
         
         let method:String = parameters[Constants.ParametersKeys.method] as! String
-        let urlStr = "\(Constants.getUrlApi(tipoAmbiente: Constants.tipoAmbiente))\(finalUrl)"
+        let urlStr = "\(Constants.getUrlApi(tipoAmbiente: Constants.tipoAmbiente))\(finalUrl)?\(Constants.apiKey)&\(Constants.apiLanguage)"
 
         guard let url = URL(string: urlStr) else {
             return
