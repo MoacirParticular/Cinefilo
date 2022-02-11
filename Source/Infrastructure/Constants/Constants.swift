@@ -20,6 +20,8 @@ struct Constants {
     static let tipoAmbiente: TipoAmbiente = TipoAmbiente.producao
     static let apiKey = "api_key=f5ee5a15ac98565adcee8a270babceab"
     static let apiLanguage = "language=pt-BR"
+    static let apiUrlImageW500 = "https://image.tmdb.org/t/p/w500/"
+    static let apiUrlImageOriginal = "https://image.tmdb.org/t/p/original/"
 
     struct ApiError {
         static let badRequest = 400

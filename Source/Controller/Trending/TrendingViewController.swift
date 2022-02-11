@@ -21,12 +21,16 @@ class TrendingViewController: UIViewController {
     
     // MARK: - Life Cycle
     
-    override func loadView() {
-        self.view = trendingView
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Tendências da semana"
+        
+        self.view.addSubview(trendingView)
+        
+        trendingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        trendingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        trendingView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        trendingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
 //        self.trendingView.tableView.reloadData()
     }

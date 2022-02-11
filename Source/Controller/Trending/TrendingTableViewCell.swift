@@ -9,38 +9,35 @@ import UIKit
 
 class TrendingTableViewCell: UITableViewCell {
     
-    let imgUser = UIImageView()
-    let labUserName = UILabel()
-    let labMessage = UILabel()
-    let labTime = UILabel()
-
+    let movieCover: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.backgroundColor = .black.withAlphaComponent(0.3)
+        
+        return iv
+    }()
+    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .large)
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        movieCover.translatesAutoresizingMaskIntoConstraints = false
 
-        imgUser.backgroundColor = UIColor.blue
+        contentView.addSubview(activityIndicator)
+        activityIndicator.color = .yellow
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+        ])
+        
+        contentView.addSubview(movieCover)
 
-        imgUser.translatesAutoresizingMaskIntoConstraints = false
-        labUserName.translatesAutoresizingMaskIntoConstraints = false
-        labMessage.translatesAutoresizingMaskIntoConstraints = false
-        labTime.translatesAutoresizingMaskIntoConstraints = false
-
-        contentView.addSubview(imgUser)
-        contentView.addSubview(labUserName)
-        contentView.addSubview(labMessage)
-        contentView.addSubview(labTime)
-
-        let viewsDict = [
-            "image" : imgUser,
-            "username" : labUserName,
-            "message" : labMessage,
-            "labTime" : labTime,
-            ] as [String : Any]
-
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[image(10)]", options: [], metrics: nil, views: viewsDict))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[labTime]-|", options: [], metrics: nil, views: viewsDict))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[username]-[message]-|", options: [], metrics: nil, views: viewsDict))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[username]-[image(10)]-|", options: [], metrics: nil, views: viewsDict))
-        contentView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[message]-[labTime]-|", options: [], metrics: nil, views: viewsDict))
+        movieCover.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        movieCover.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        movieCover.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        movieCover.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -0).isActive = true
     }
 
     required init?(coder aDecoder: NSCoder) {
