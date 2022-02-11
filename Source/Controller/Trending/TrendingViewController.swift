@@ -14,7 +14,7 @@ class TrendingViewController: UIViewController {
     let trendingView: TrendingView = {
         let view = TrendingView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
+        view.backgroundColor = .red //.backgroundColorSubView
         
         return view
     }()
@@ -27,19 +27,12 @@ class TrendingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.trendingView.tableView.reloadData()
     }
 
     // MARK: Actions
-    private func loadTrendings() {
-        let manager: TrendingManagerProtocol = TrendingManager()
-        
-        manager.requestTrendings(mediaType: MediaType.all,
-                                 timeWindow: TimeWindows.week) { trendingViewModel in
-            DebugLogger.log("Sucesso")
-        } failureHandler: { error in
-            DebugLogger.log("Erro")
-        }
-    }
+    
     
 }
 

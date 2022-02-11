@@ -9,25 +9,25 @@ import Foundation
 
 struct TrendingViewModel {
     let page: Int
-    let results: [ResultViewModel]
+    let trendingsResults: [TrendingsViewModel]
     let totalPages, totalResults: Int
 
     init() {
         self.page = 0
-        self.results = [ResultViewModel()]
+        self.trendingsResults = [TrendingsViewModel()]
         self.totalPages = 0
         self.totalResults = 0
     }
     
     init(model: TrendingModel) {
         self.page = model.page
-        self.results = model.results.map { ResultViewModel(model: $0 ) }
+        self.trendingsResults = model.results.map { TrendingsViewModel(model: $0 ) }
         self.totalPages = model.totalPages
         self.totalResults = model.totalResults
     }
 }
 
-struct ResultViewModel {
+struct TrendingsViewModel {
     var genreIDS: [Int]
     var originalLanguageViewModel: OriginalLanguage
     var originalTitle: String

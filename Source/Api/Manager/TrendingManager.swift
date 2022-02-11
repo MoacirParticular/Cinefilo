@@ -8,7 +8,7 @@
 import Foundation
 
 protocol TrendingManagerProtocol: BaseManager {
-    func requestTrendings(mediaType: MediaType, timeWindow: TimeWindows, sucessHandler: @escaping ((Bool) -> Void), failureHandler: @escaping ApiProviderFailureHandler)
+    func requestTrendings(mediaType: MediaType, timeWindow: TimeWindows, sucessHandler: @escaping ((TrendingViewModel) -> Void), failureHandler: @escaping ApiProviderFailureHandler)
 }
 
 class TrendingManager: BaseManager, TrendingManagerProtocol {
@@ -20,7 +20,7 @@ class TrendingManager: BaseManager, TrendingManagerProtocol {
     }
     
     
-    func requestTrendings(mediaType: MediaType, timeWindow: TimeWindows, sucessHandler: @escaping ((Bool) -> Void), failureHandler: @escaping ApiProviderFailureHandler) {
+    func requestTrendings(mediaType: MediaType, timeWindow: TimeWindows, sucessHandler: @escaping ((TrendingViewModel) -> Void), failureHandler: @escaping ApiProviderFailureHandler) {
         let paramters: [AnyHashable: Any] = [Constants.ParametersKeys.method: Constants.HTTPMethod.get,
                                              Constants.ParametersKeys.path: [Constants.ParametersKeys.mediaType: Constants.ParametersKeys.mediaType,
                                                                              Constants.ParametersKeys.timeWindow: Constants.ParametersKeys.timeWindow]]
@@ -35,8 +35,7 @@ class TrendingManager: BaseManager, TrendingManagerProtocol {
             case .success(let model) :
                 let viewModel = TrendingViewModel(model: model)
                 
-                DataStore.trendingsDataStore.trending = viewModel
-                sucessHandler(true)
+                sucessHandler(viewModel)
             case .failure(let error):
                 DebugLogger.log(error)
                 

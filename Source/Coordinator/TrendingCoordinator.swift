@@ -11,22 +11,6 @@ import UIKit
 
 class TrendingCoordinator: Coordinator {
     var navigationController: UINavigationController
-//    var window: UIWindow
-//
-//    init(window: UIWindow) {
-//        self.window = window
-//    }
-//
-//    func start() {
-//        let viewController = TrendingViewController()
-//
-//        self.navigationController = UINavigationController(rootViewController: viewController)
-//        self.window.rootViewController = navigationController
-//
-//        if let navigation = self.navigationController {
-//            navigation.pushViewController(viewController, animated: false)
-//        }
-//    }
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

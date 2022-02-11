@@ -19,4 +19,16 @@ class TrendingDataStore {
         
         trending = TrendingViewModel(model: trendingModel)
     }
+    
+    func getTrendings() {
+        let manager: TrendingManagerProtocol = TrendingManager()
+        
+        manager.requestTrendings(mediaType: MediaType.all,
+                                 timeWindow: TimeWindows.week) { trendingViewModel in
+            self.trending = trendingViewModel
+        } failureHandler: { error in
+            DebugLogger.log("Erro")
+            self.trending = TrendingViewModel()
+        }
+    }
 }
