@@ -20,10 +20,15 @@ class TrendingDetailsViewController: UIViewController {
     }()
     
     // MARK: - Life Cycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Detalhes"
+        
+        self.navigationController?.navigationBar.backItem?.title = "Voltar"
         
         self.view.addSubview(trendingDetails)
         
@@ -32,8 +37,6 @@ class TrendingDetailsViewController: UIViewController {
         trendingDetails.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         trendingDetails.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
-
+    
     // MARK: Actions
-    
-    
 }

@@ -24,9 +24,14 @@ class TrendingViewController: UIViewController {
     
     // MARK: - Life Cycle
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.title = "Tendências"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Tendências da semana"
         
         self.view.addSubview(trendingView)
         
@@ -43,7 +48,5 @@ class TrendingViewController: UIViewController {
     }
 
     // MARK: Actions
-    
-    
 }
 

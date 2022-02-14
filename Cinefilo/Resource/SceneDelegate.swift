@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.makeKeyAndVisible()
 
         let navigationController = UINavigationController()
+        
         self.window?.rootViewController = navigationController
         let coordinator = TrendingCoordinator(navigationController: navigationController)
         
