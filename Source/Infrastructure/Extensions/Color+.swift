@@ -23,6 +23,10 @@ public extension UIColor {
     static var colorCellSelectedDefault: UIColor {
         return UIColor(named: "colorCellSelectedDefault")!
     }
+    
+    static var titleColor: UIColor {
+        return UIColor(named: "titleColor")!
+    }
 }
 
 

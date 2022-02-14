@@ -5,29 +5,34 @@
 //  Created by Moacir Ezequiel Lamego on 04/02/22.
 //
 
-import Foundation
+import UIKit
 
-struct TrendingViewModel {
-    let page: Int
-    let trendingsResults: [TrendingsViewModel]
-    let totalPages, totalResults: Int
+class TrendingsViewModel: ViewModel<TrendingModel> {
+    var page: Int
+    var trendingsResults: [TrendingViewModel]
+    var totalPages, totalResults: Int
 
     init() {
         self.page = 0
-        self.trendingsResults = [TrendingsViewModel()]
+        self.trendingsResults = [TrendingViewModel()]
         self.totalPages = 0
         self.totalResults = 0
+        
+        super.init(model: TrendingModel())
     }
     
-    init(model: TrendingModel) {
+    override init(model: TrendingModel) {
         self.page = model.page
-        self.trendingsResults = model.results.map { TrendingsViewModel(model: $0 ) }
+        self.trendingsResults = model.results.map { TrendingViewModel(model: $0 ) }
         self.totalPages = model.totalPages
         self.totalResults = model.totalResults
+        
+        super.init(model: model)
+
     }
 }
 
-struct TrendingsViewModel {
+struct TrendingViewModel {
     var genreIDS: [Int]
     var originalLanguageViewModel: OriginalLanguage
     var originalTitle: String
@@ -91,4 +96,3 @@ struct TrendingsViewModel {
         self.name = model.name ?? String.empty
     }
 }
-

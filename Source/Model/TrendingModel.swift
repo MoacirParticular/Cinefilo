@@ -32,6 +32,13 @@ struct TrendingModel: Decodable {
         case totalPages = "total_pages"
         case totalResults = "total_results"
     }
+    
+    init() {
+        page = 0
+        totalPages = 0
+        totalResults = 0
+        results = [ResultModel]()
+    }
 }
 
 //

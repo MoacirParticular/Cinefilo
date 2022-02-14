@@ -8,16 +8,16 @@
 import Foundation
 
 class TrendingDataStore {
-    var trending: TrendingViewModel!
+    var trending: TrendingsViewModel!
     
     init() {
-        trending = TrendingViewModel()
+        trending = TrendingsViewModel()
     }
     
     convenience init(withTrendingModel trendingModel: TrendingModel) {
         self.init()
         
-        trending = TrendingViewModel(model: trendingModel)
+        trending = TrendingsViewModel(model: trendingModel)
     }
     
     func getTrendings() {
@@ -28,7 +28,7 @@ class TrendingDataStore {
             self.trending = trendingViewModel
         } failureHandler: { error in
             DebugLogger.log("Erro")
-            self.trending = TrendingViewModel()
+            self.trending = TrendingsViewModel()
         }
     }
 }

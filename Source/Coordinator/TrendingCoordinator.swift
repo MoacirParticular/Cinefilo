@@ -19,6 +19,19 @@ class TrendingCoordinator: Coordinator {
     func start() {
         let viewController = TrendingViewController()
         
+        viewController.onSelectedTrending = { viewModel in
+            self.gotoDetails(viewModel: viewModel)
+        }
+        
         self.navigationController.pushViewController(viewController, animated: false)
+    }
+    
+    private func gotoDetails(viewModel: TrendingViewModel?) {
+        if let vm = viewModel {
+            let coordinator = TrendingDetailsCoordinator(navigationController: self.navigationController,
+                                                         trendingViewModel: vm)
+            
+            coordinator.start()
+        }
     }
 }

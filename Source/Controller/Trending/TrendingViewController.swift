@@ -8,6 +8,9 @@
 import UIKit
 
 class TrendingViewController: UIViewController {
+    
+    // MARK: :-) Closures
+    var onSelectedTrending: ((_ trendingSelected: TrendingViewModel) -> Void)?
 
     // MARK: Views
     
@@ -32,7 +35,11 @@ class TrendingViewController: UIViewController {
         trendingView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         trendingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         
-//        self.trendingView.tableView.reloadData()
+        trendingView.onSelectedTrending = {[weak self] selectedTrendingViewModel in
+            self?.onSelectedTrending?(selectedTrendingViewModel)
+        }
+        
+        self.trendingView.tableView.reloadData()
     }
 
     // MARK: Actions

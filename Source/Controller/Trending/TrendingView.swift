@@ -15,7 +15,7 @@ class TrendingView: UIView {
     private let rowHeight:CGFloat = 300
 
     
-    var onSelectedTrending: ((_ trendingSelected: TrendingsViewModel) -> Void)?
+    var onSelectedTrending: ((_ trendingSelected: TrendingViewModel) -> Void)?
     var onPullToRefresh: (() -> Void)?
     
     // MARK: - Itens Visuais
@@ -97,50 +97,17 @@ extension TrendingView: UITableViewDataSource {
             cell.activityIndicator.startAnimating()
         }
         
-        let trending = DataStore.trendingsDataStore.trending.trendingsResults[indexPath.row]
-
-        loadImageUsingCache(withUrl: "\(Constants.apiUrlImageW500)\(trending.posterPath)",
-                            completion: { result in
-                                switch result {
-                                case .success(let image):
-                                    cell.movieCover.image = image
-                                    cell.activityIndicator.stopAnimating()
-                                case .failure(_):
-                                    cell.movieCover.image = UIImage()
-                                }
-                            })
+        let trendingViewModel = DataStore.trendingsDataStore.trending.trendingsResults[indexPath.row]
         
+        cell.movieCover.loadImageUsingCache(withUrl: "\(Constants.apiUrlImageW500)\(trendingViewModel.posterPath)")
+
         return cell
-    }
-    
-    func loadImageUsingCache(withUrl urlString : String, completion: @escaping (Result<UIImage, Error>) -> Void) {
-
-        let url = URL(string: urlString)
-        if url == nil {return}
-        
-        URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
-            if error != nil {
-                print(error!)
-                completion(.failure(error!))
-            }
-            
-            DispatchQueue.main.async {
-                if let image = UIImage(data: data!) {
-                    completion(.success(image))
-                }
-                else {
-                    let erro = NSError()
-                    completion(.failure(erro))
-                }
-            }
-            
-        }).resume()
     }
 }
 
 extension TrendingView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let trendingSelected = DataStore.trendingsDataStore.trending?.trendingsResults[indexPath.row] ?? TrendingsViewModel()
+        let trendingSelected = DataStore.trendingsDataStore.trending?.trendingsResults[indexPath.row] ?? TrendingViewModel()
         onSelectedTrending?(trendingSelected)
     }
 }
