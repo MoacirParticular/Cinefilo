@@ -1,0 +1,11 @@
+/* 
+  CinefiloLocalizable.strings
+  Cinefilo
+
+  Created by Moacir Ezequiel Lamego on 15/02/22.
+  
+*/
+"backButton"="Voltar";
+"detailsTitle"="Detalhes";
+"sinopseTitle"="Sinopse";
+"ratingTitle"="Rating: %@";

@@ -26,16 +26,22 @@ class TrendingDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Detalhes"
+        self.title = LocalizableStrings.detailsTitle.localize()
+        self.accessibilityLabel = AccessibilityLocalizableStrings.detailsTitle.localize()
         
-        self.navigationController?.navigationBar.backItem?.title = "Voltar"
-        
+        self.navigationController?.navigationBar.backItem?.title = LocalizableStrings.backButton.localize()
+        self.navigationController?.navigationBar.backItem?.accessibilityLabel = AccessibilityLocalizableStrings.backButton.localize()
+        self.navigationController?.navigationBar.backItem?.accessibilityTraits = .button
+        self.navigationController?.navigationBar.backItem?.isAccessibilityElement = true
+
         self.view.addSubview(trendingDetails)
         
         trendingDetails.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         trendingDetails.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         trendingDetails.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         trendingDetails.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        
+        trendingDetails.accessibilityElements = [navigationController, trendingDetails.titleDetailsLabel, trendingDetails.sinopseLabel, trendingDetails.sinopseDetailsLabel, trendingDetails.ratingLabel ].compactMap { $0 }
     }
     
     // MARK: Actions

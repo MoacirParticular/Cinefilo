@@ -1,0 +1,11 @@
+/* 
+  CinefiloAccessibilityLocalizable.strings
+  Cinefilo
+
+  Created by Moacir Ezequiel Lamego on 15/02/22.
+  
+*/
+"backButton"="Voltar para tela anterior";
+"detailsTitle"="Detalhes do Filme";
+"sinopseTitle"="Sinopse do filme";
+"ratingTitle"="A média da pontuação de Rating do filme é de %@";

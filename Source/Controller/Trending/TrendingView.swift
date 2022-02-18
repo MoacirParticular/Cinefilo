@@ -26,6 +26,7 @@ class TrendingView: UIView {
             tv.delegate = self
             tv.dataSource = self
             tv.register(TrendingTableViewCell.self, forCellReuseIdentifier: self.cellId)
+        tv.accessibilityLabel = "Lista de tendências da semana"
             return tv
     }()
     
@@ -93,16 +94,15 @@ extension TrendingView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! TrendingTableViewCell
         
-        DispatchQueue.main.async {
-            cell.activityIndicator.startAnimating()
-        }
-        
         let trendingViewModel = DataStore.trendingsDataStore.trending.trendingsResults[indexPath.row]
         
         cell.movieCover.loadImageUsingCache(withUrl: "\(Constants.apiUrlImageW500)\(trendingViewModel.posterPath)")
+        
+        cell.accessibilityLabel = "Tipo: \(trendingViewModel.mediaType), Título: \(String(describing: trendingViewModel.title)), sinopse: \(trendingViewModel.overview)"
 
         return cell
     }
+    
 }
 
 extension TrendingView: UITableViewDelegate {

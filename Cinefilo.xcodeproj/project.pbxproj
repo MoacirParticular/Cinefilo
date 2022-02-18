@@ -18,6 +18,10 @@
 		9928FCAB27BAA2C10002F3D1 /* TrendingDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928FCAA27BAA2C10002F3D1 /* TrendingDetailsCoordinator.swift */; };
 		9928FCAD27BABCEA0002F3D1 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928FCAC27BABCEA0002F3D1 /* ViewModel.swift */; };
 		9928FCAF27BAE20C0002F3D1 /* ImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928FCAE27BAE20C0002F3D1 /* ImageView+.swift */; };
+		9928FCB227BBE3140002F3D1 /* CinefiloLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9928FCB127BBE3140002F3D1 /* CinefiloLocalizable.strings */; };
+		9928FCB427BBE3280002F3D1 /* CinefiloAccessibilityLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9928FCB327BBE3280002F3D1 /* CinefiloAccessibilityLocalizable.strings */; };
+		9928FCB727BBE50F0002F3D1 /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928FCB627BBE50F0002F3D1 /* LocalizableStrings.swift */; };
+		9928FCB927BBF2370002F3D1 /* AccessibilityLocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9928FCB827BBF2370002F3D1 /* AccessibilityLocalizableStrings.swift */; };
 		992A007327B3DD5B00B73D14 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A007227B3DD5B00B73D14 /* String+.swift */; };
 		992A007527B3DF3500B73D14 /* Formatter+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A007427B3DF3500B73D14 /* Formatter+.swift */; };
 		992A007727B3DF9600B73D14 /* Numeric+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A007627B3DF9600B73D14 /* Numeric+.swift */; };
@@ -78,6 +82,10 @@
 		9928FCAA27BAA2C10002F3D1 /* TrendingDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendingDetailsCoordinator.swift; sourceTree = "<group>"; };
 		9928FCAC27BABCEA0002F3D1 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		9928FCAE27BAE20C0002F3D1 /* ImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageView+.swift"; sourceTree = "<group>"; };
+		9928FCB127BBE3140002F3D1 /* CinefiloLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = CinefiloLocalizable.strings; sourceTree = "<group>"; };
+		9928FCB327BBE3280002F3D1 /* CinefiloAccessibilityLocalizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = CinefiloAccessibilityLocalizable.strings; sourceTree = "<group>"; };
+		9928FCB627BBE50F0002F3D1 /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
+		9928FCB827BBF2370002F3D1 /* AccessibilityLocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityLocalizableStrings.swift; sourceTree = "<group>"; };
 		992A007227B3DD5B00B73D14 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		992A007427B3DF3500B73D14 /* Formatter+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+.swift"; sourceTree = "<group>"; };
 		992A007627B3DF9600B73D14 /* Numeric+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Numeric+.swift"; sourceTree = "<group>"; };
@@ -166,6 +174,24 @@
 			path = TrendingDetails;
 			sourceTree = "<group>";
 		};
+		9928FCB027BBE2DB0002F3D1 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				9928FCB127BBE3140002F3D1 /* CinefiloLocalizable.strings */,
+				9928FCB327BBE3280002F3D1 /* CinefiloAccessibilityLocalizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		9928FCB527BBE4EB0002F3D1 /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				9928FCB627BBE50F0002F3D1 /* LocalizableStrings.swift */,
+				9928FCB827BBF2370002F3D1 /* AccessibilityLocalizableStrings.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
 		99652B4327B31001003FCC3D = {
 			isa = PBXGroup;
 			children = (
@@ -216,6 +242,7 @@
 		99652B7F27B3100A003FCC3D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				9928FCB027BBE2DB0002F3D1 /* Strings */,
 				99652B8027B31023003FCC3D /* Storyboard */,
 				99652B5827B31004003FCC3D /* Assets.xcassets */,
 				9928FC9D27B6A82E0002F3D1 /* Themes.xcassets */,
@@ -291,6 +318,7 @@
 				99652BA627B31281003FCC3D /* Constants */,
 				99652BA927B31281003FCC3D /* Enums */,
 				99652BAE27B31281003FCC3D /* Extensions */,
+				9928FCB527BBE4EB0002F3D1 /* Localizable */,
 				99652BAC27B31281003FCC3D /* Utils */,
 			);
 			path = Infrastructure;
@@ -478,7 +506,9 @@
 			files = (
 				99652B5C27B31004003FCC3D /* LaunchScreen.storyboard in Resources */,
 				9928FC9E27B6A82E0002F3D1 /* Themes.xcassets in Resources */,
+				9928FCB227BBE3140002F3D1 /* CinefiloLocalizable.strings in Resources */,
 				99652B5927B31004003FCC3D /* Assets.xcassets in Resources */,
+				9928FCB427BBE3280002F3D1 /* CinefiloAccessibilityLocalizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9928FCB927BBF2370002F3D1 /* AccessibilityLocalizableStrings.swift in Sources */,
 				9928FCAB27BAA2C10002F3D1 /* TrendingDetailsCoordinator.swift in Sources */,
 				997B968B27B5ACA300DA6CAA /* Bundle+.swift in Sources */,
 				997B968727B5A87600DA6CAA /* TrendingView.swift in Sources */,
@@ -528,6 +559,7 @@
 				992A007327B3DD5B00B73D14 /* String+.swift in Sources */,
 				99652BB427B31281003FCC3D /* Enums.swift in Sources */,
 				9928FCA027B6AE290002F3D1 /* TrendingTableViewCell.swift in Sources */,
+				9928FCB727BBE50F0002F3D1 /* LocalizableStrings.swift in Sources */,
 				9928FCAD27BABCEA0002F3D1 /* ViewModel.swift in Sources */,
 				99652BB827B31281003FCC3D /* ApiProvider+.swift in Sources */,
 				9928FCA727BA94FB0002F3D1 /* TrendingDetailsView.swift in Sources */,
@@ -707,6 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U847YAAMJ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cinefilo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -733,6 +766,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = U847YAAMJ9;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Cinefilo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

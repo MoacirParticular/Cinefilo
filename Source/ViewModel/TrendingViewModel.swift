@@ -32,7 +32,7 @@ class TrendingsViewModel: ViewModel<TrendingModel> {
     }
 }
 
-struct TrendingViewModel {
+class TrendingViewModel {
     var genreIDS: [Int]
     var originalLanguageViewModel: OriginalLanguage
     var originalTitle: String
@@ -47,7 +47,7 @@ struct TrendingViewModel {
     var backdropPath: String
     var title: String?
     var popularity: Double
-    var mediaType: MediaTypeModel
+    var mediaType: String
     var originalName: String
     var originCountry: [String]
     var firstAirDate, name: String
@@ -67,7 +67,7 @@ struct TrendingViewModel {
         self.backdropPath = String.empty
         self.title = String.empty
         self.popularity = 0.0
-        self.mediaType = MediaTypeModel.movie
+        self.mediaType = String.empty
         self.originalName = String.empty
         self.originCountry = [String.empty]
         self.firstAirDate  = String.empty
@@ -89,10 +89,23 @@ struct TrendingViewModel {
         self.backdropPath = model.backdropPath
         self.title = model.title
         self.popularity = model.popularity
-        self.mediaType = model.mediaType
+        self.mediaType = model.mediaType == MediaTypeModel.movie ? "Filme" : "Série"
         self.originalName = model.originalName ?? String.empty
         self.originCountry = model.originCountry ?? [String.empty]
         self.firstAirDate  = model.firstAirDate ?? String.empty
         self.name = model.name ?? String.empty
+    }
+    
+    func getMediaType(mediaType: MediaTypeModel) -> String {
+        var result = ""
+        
+        switch mediaType {
+        case .movie:
+            result = "Filme"
+        case .tv:
+            result = "Série"
+        }
+        
+        return result
     }
 }

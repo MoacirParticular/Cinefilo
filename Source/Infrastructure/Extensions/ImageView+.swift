@@ -15,6 +15,8 @@ extension UIImageView {
             let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .medium)
             
             addSubview(activityIndicator)
+            activityIndicator.color = .yellow
+            
             activityIndicator.startAnimating()
             activityIndicator.center = self.center
             
@@ -42,7 +44,7 @@ extension UIImageView {
             return
         }
 
-        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .medium)
+        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .large)
     
         addSubview(activityIndicator)
         activityIndicator.startAnimating()

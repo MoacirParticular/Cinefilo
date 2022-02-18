@@ -17,21 +17,11 @@ class TrendingTableViewCell: UITableViewCell {
         
         return iv
     }()
-    let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(style: .large)
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         movieCover.translatesAutoresizingMaskIntoConstraints = false
-
-        contentView.addSubview(activityIndicator)
-        activityIndicator.color = .yellow
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            activityIndicator.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            activityIndicator.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-        ])
-        
         contentView.addSubview(movieCover)
 
         movieCover.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
