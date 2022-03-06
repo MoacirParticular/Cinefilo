@@ -13,7 +13,6 @@ class TrendingView: UIView {
     // MARK: Constants
     private let cellId = "trendingId"
     private let rowHeight:CGFloat = 300
-
     
     var onSelectedTrending: ((_ trendingSelected: TrendingViewModel) -> Void)?
     var onPullToRefresh: (() -> Void)?

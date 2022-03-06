@@ -23,7 +23,7 @@ class TrendingCoordinator: Coordinator {
             self.gotoDetails(viewModel: viewModel)
         }
         
-        self.navigationController.pushViewController(viewController, animated: false)
+        self.navigationController.pushViewController(viewController, animated: true)
     }
     
     private func gotoDetails(viewModel: TrendingViewModel?) {
