@@ -24,17 +24,24 @@ class TrendingViewController: UIViewController {
     
     // MARK: - Life Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupTrendingView()
+        trendingView.tableView.reloadData()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         self.title = "Tendências"
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    // MARK: Setup Methods
+    
+    private func setupTrendingView() {
         self.view.addSubview(trendingView)
-        
+
         trendingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         trendingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
         trendingView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
@@ -43,10 +50,7 @@ class TrendingViewController: UIViewController {
         trendingView.onSelectedTrending = {[weak self] selectedTrendingViewModel in
             self?.onSelectedTrending?(selectedTrendingViewModel)
         }
-        
-        self.trendingView.tableView.reloadData()
     }
 
     // MARK: Actions
 }
-

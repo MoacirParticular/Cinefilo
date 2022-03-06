@@ -20,14 +20,14 @@ class TrendingView: UIView {
     
     // MARK: - Itens Visuais
     lazy var tableView: UITableView = {
-            let tv = UITableView(frame: .zero, style: .plain)
-            tv.translatesAutoresizingMaskIntoConstraints = false
-            tv.backgroundColor = .lightGray
-            tv.delegate = self
-            tv.dataSource = self
-            tv.register(TrendingTableViewCell.self, forCellReuseIdentifier: self.cellId)
+        let tv = UITableView(frame: .zero, style: .plain)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.backgroundColor = .lightGray
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(TrendingTableViewCell.self, forCellReuseIdentifier: self.cellId)
         tv.accessibilityLabel = "Lista de tendências da semana"
-            return tv
+        return tv
     }()
     
     // MARK: Variáveis
