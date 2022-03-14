@@ -19,6 +19,6 @@ class TrendingDetailsCoordinator: Coordinator {
     func start() {
         let viewController = TrendingDetailsViewController()
         viewController.trendingDetails.setDetails(trendingViewModel: trendingViewModel)
-        self.navigationController.pushViewController(viewController, animated: false)
+        self.navigationController.pushViewController(viewController, animated: true)
     }
 }

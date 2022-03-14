@@ -21,13 +21,7 @@ class TrendingTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        movieCover.translatesAutoresizingMaskIntoConstraints = false
-        contentView.addSubview(movieCover)
-
-        movieCover.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
-        movieCover.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
-        movieCover.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
-        movieCover.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -0).isActive = true
+        setupMovieCover()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -42,5 +36,15 @@ class TrendingTableViewCell: UITableViewCell {
          } else {
              contentView.backgroundColor = .colorCellSelectedDefault
          }
-     }
+    }
+    
+    private func setupMovieCover() {
+        movieCover.translatesAutoresizingMaskIntoConstraints = false
+        contentView.addSubview(movieCover)
+
+        movieCover.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
+        movieCover.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        movieCover.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
+        movieCover.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -0).isActive = true
+    }
 }

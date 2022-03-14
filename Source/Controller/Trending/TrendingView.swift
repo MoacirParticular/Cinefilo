@@ -13,21 +13,20 @@ class TrendingView: UIView {
     // MARK: Constants
     private let cellId = "trendingId"
     private let rowHeight:CGFloat = 300
-
     
     var onSelectedTrending: ((_ trendingSelected: TrendingViewModel) -> Void)?
     var onPullToRefresh: (() -> Void)?
     
     // MARK: - Itens Visuais
     lazy var tableView: UITableView = {
-            let tv = UITableView(frame: .zero, style: .plain)
-            tv.translatesAutoresizingMaskIntoConstraints = false
-            tv.backgroundColor = .lightGray
-            tv.delegate = self
-            tv.dataSource = self
-            tv.register(TrendingTableViewCell.self, forCellReuseIdentifier: self.cellId)
+        let tv = UITableView(frame: .zero, style: .plain)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.backgroundColor = .lightGray
+        tv.delegate = self
+        tv.dataSource = self
+        tv.register(TrendingTableViewCell.self, forCellReuseIdentifier: self.cellId)
         tv.accessibilityLabel = "Lista de tendências da semana"
-            return tv
+        return tv
     }()
     
     // MARK: Variáveis
